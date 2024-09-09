@@ -1,5 +1,3 @@
-[![Test Status](https://img.shields.io/github/workflow/status/VishnuKMi/eip712-signature-verify/CI)](https://github.com/VishnuKMi/eip712-signature-verify/actions/workflows/test.yml)
-
 # EIP-712 Signatures Demo
 
 A minimal reproduction demonstrating the signing and verification of complex data structures using EIP-712 signatures, both off-chain and on-chain.
