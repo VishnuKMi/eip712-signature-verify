@@ -1,0 +1,19 @@
+{
+  "name": "eip712-signature-verify",
+  "author": "vsnu",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "A minimal reproduction of signing and verifying a complex data structure both off-chain and on-chain, ensuring cryptographic security.",
+  "type": "module",
+  "scripts": {
+    "install": "forge install",
+    "test:offchain": "cd offchain && node sign.js",
+    "test:onchain": "forge test",
+    "test": "pnpm run test:offchain && pnpm run test:onchain"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "viem": "^2.21.3"
+  }
+}
