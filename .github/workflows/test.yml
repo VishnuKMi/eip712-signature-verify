@@ -42,11 +42,11 @@ jobs:
       - name: Verify PRIVATE_KEY
         run: echo "PRIVATE_KEY is set"
         env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          PRIVATE_KEY: ${{ env.PRIVATE_KEY }}
 
       - name: Run Forge tests
         env:
-          PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
+          PRIVATE_KEY: ${{env.PRIVATE_KEY}}
         run: |
           forge test -vvv
         id: test
