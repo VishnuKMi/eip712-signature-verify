@@ -75,14 +75,13 @@ contract EIP712Test is Test, EIP712 {
         });
 
         bytes32 structHash = Struct.hashTransactionDetails(details);
-        console2.logBytes32(structHash);
-        console2.logBytes32(mock.getHashTypedData(structHash));
 
         bytes32 expectedDigest = keccak256(abi.encodePacked("\x19\x01", mock.getDomainSeparator(), structHash));
-        assertEq(mock.getHashTypedData(structHash), expectedDigest);
 
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(privateKey, expectedDigest);
         address recoveredAddress = ecrecover(expectedDigest, v, r, s);
         console2.log("RECOVERED_ADDRESS", recoveredAddress);
+
+        assertEq(mock.getHashTypedData(structHash), expectedDigest);
     }
 }

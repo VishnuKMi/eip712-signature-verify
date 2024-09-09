@@ -8,7 +8,7 @@
   "scripts": {
     "install": "forge install",
     "test:offchain": "cd offchain && node sign.js",
-    "test:onchain": "forge test",
+    "test:onchain": "forge test -vvv",
     "test": "pnpm run test:offchain && pnpm run test:onchain"
   },
   "dependencies": {
